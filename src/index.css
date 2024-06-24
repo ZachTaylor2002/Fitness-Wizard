@@ -9,3 +9,11 @@ span{
     font-family: inherit;
     font-weight: inherit;
 }
+.shadow-blue{
+    box-shadow: 3px 3px 0 0 #f97316; 
+}
+
+.shadow-blue:hover{
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 0 #f97316;
+}
