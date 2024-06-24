@@ -11,11 +11,14 @@ function App() {
     //React Fragments
     //Basically empty divs 
     //From here we can render out our React components as if they were HTML tags
-    <>
+
+
+    <main className= 'min-h-screen flex flex-col bg-gradient-to-r from-blue-700 to-green-600 text-white text-sm sm:text-base'>
+
      <Hero/>
      <Generator/>
      <Workout/>
-    </>
+    </main>
   )
 }
 
