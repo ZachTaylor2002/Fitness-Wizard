@@ -1,1 +1,1 @@
-# WorkoutWizard
+# Fitness Wizard
