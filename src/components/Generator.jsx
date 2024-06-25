@@ -19,9 +19,6 @@ function Header(props) {
 
 export default function Generator() {
 
-  let 
-
-
   return (
     <SectionWrapper  header={"generate your workout"} title={['It\'s', 'Fitness', 'o\'clock']}>
       <Header index={'01'} title={'Pick your challenge'} description={"Choose your next fitness adventure."} />
