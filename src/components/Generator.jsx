@@ -1,5 +1,6 @@
 import React from 'react'
 import SectionWrapper from './SectionWrapper'
+import { WORKOUTS } from '../utils/workout_info';
 
 function Header(props) {
   const { index, title, description } = props;
@@ -20,6 +21,14 @@ export default function Generator() {
   return (
     <SectionWrapper  header={"generate your workout"} title={['It\'s', 'Huge', 'o\'clock']}>
       <Header index={'01'} title={'Pick your challenge'} description={"Choose your next fitness adventure."} />
+      {Object.keys(WORKOUTS).map((type, typeIndex) => {
+        return (
+          <button key={typeIndex}>
+             <p>{type}</p>
+          </button>
+        )
+      })}
+    
     
 
     </SectionWrapper>
