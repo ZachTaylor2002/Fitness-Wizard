@@ -18,16 +18,33 @@ function Header(props) {
 
 
 export default function Generator() {
+
+  let 
+
+
   return (
-    <SectionWrapper  header={"generate your workout"} title={['It\'s', 'Huge', 'o\'clock']}>
+    <SectionWrapper  header={"generate your workout"} title={['It\'s', 'Fitness', 'o\'clock']}>
       <Header index={'01'} title={'Pick your challenge'} description={"Choose your next fitness adventure."} />
+      
+      <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
       {Object.keys(WORKOUTS).map((type, typeIndex) => {
         return (
-          <button key={typeIndex}>
-             <p>{type}</p>
+          <button className='bg-slate-950 border border-slate-950 duration-200 px-4 py-3 rounded-lg hover:border-orange-500 hover:bg-orange-500 hover:text-white' key={typeIndex}>
+             <p className='capitalize'>{type.replaceAll('_', " ")}</p>
           </button>
         )
       })}
+      </div>
+
+      
+      <Header index={'02'} title={'Lock on targets'} description={"Target your muscle groups"} />
+<div className='bg-slate-950 p-3 border border-solid border-blue-400 rounded-lg'>
+   <div className='relative flex items-center justify-center'>
+       <p className="text-white">Select muscle groups</p>
+       <i className="fa-solid absolute right-3 top-1/2 -translate-y-1/2 fas fa-caret-down"></i>
+   </div>
+
+</div>
     
     
 
