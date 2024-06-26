@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import SectionWrapper from './SectionWrapper'
 import { SCHEMES, WORKOUTS } from '../utils/workout_info';
+import Button from './Button';
 
 function Header(props) {
   const { index, title, description } = props;
@@ -108,6 +109,10 @@ export default function Generator() {
 </div>
 </div>
 
+      <Button className='sdzsd' text={"Formulate"}/>
+
     </SectionWrapper>
+
+      
   )
 }
