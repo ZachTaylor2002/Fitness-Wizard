@@ -27,6 +27,29 @@ export default function Generator() {
     setShowModal(!showModal);
   };
 
+  function updateMuscles(muscleGroup) {
+    if (muscles.includes(muscleGroup)) {
+        setMuscles(muscles.filter(val => val !== muscleGroup))
+        return
+    }
+
+    if (muscles.length > 2) {
+        return
+    }
+
+    if (poison !== 'individual') {
+        setMuscles([muscleGroup])
+        setShowModal(false)
+        return
+    }
+
+    setMuscles([...muscles, muscleGroup])
+    if (muscles.length === 2) {
+        setShowModal(false)
+    }
+
+}
+
   return (
     <SectionWrapper header={"generate your workout"} title={['It\'s', 'Fitness', 'o\'clock']}>
       <Header index={'01'} title={'Pick your challenge'} description={"Choose your next fitness adventure."} />
