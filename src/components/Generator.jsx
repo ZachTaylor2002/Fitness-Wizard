@@ -54,7 +54,17 @@ export default function Generator() {
           <i className="fa-solid fas fa-caret-down text-white"></i>
         </button>
         {showModal && (
-          <div>Modal</div>
+            <div className='flex flex-col px-3 pb-3'>
+            {(poison === 'individual' ? WORKOUTS[poison] : Object.keys(WORKOUTS[poison])).map((muscleGroup, muscleGroupIndex) => {
+                return (
+                    <button onClick={() => {
+                        updateMuscles(muscleGroup)
+                    }} key={muscleGroupIndex} className={'hover:text-orange-400 duration-200 ' + (muscles.includes(muscleGroup) ? ' text-orange-400' : ' ')}>
+                        <p className='uppercase'>{muscleGroup.replaceAll('_', ' ')}</p>
+                    </button>
+                )
+            })}
+        </div>
         )}
       </div>
 
