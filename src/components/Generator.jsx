@@ -58,6 +58,7 @@ export default function Generator() {
       {Object.keys(WORKOUTS).map((type, typeIndex) => {
         return (
           <button onClick={() => {
+            setMuscles([])
             setPoison(type)
           }} className={
             'border duration-200 px-4 py-3 rounded-lg' +
@@ -72,10 +73,10 @@ export default function Generator() {
       
       <Header index={'02'} title={'Lock on targets'} description={"Target your muscle groups"} />
       <div className='bg-slate-950 p-3 border border-solid border-blue-400 rounded-lg'>
-        <button onClick={toggleModal} className='relative flex items-center justify-between w-full p-3'>
-          <p className="text-white mx-auto">Select muscle groups</p>
+      <button onClick={toggleModal} className='relative flex items-center justify-between w-full p-3'>
+            <p className='capitalize text-center w-full'>{muscles.length == 0 ? 'Select muscle groups' : muscles.join(' ')}</p>
           <i className="fa-solid fas fa-caret-down text-white"></i>
-        </button>
+      </button>
         {showModal && (
             <div className='flex flex-col px-3 pb-3'>
             {(poison === 'individual' ? WORKOUTS[poison] : Object.keys(WORKOUTS[poison])).map((muscleGroup, muscleGroupIndex) => {
