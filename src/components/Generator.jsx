@@ -19,9 +19,9 @@ function Header(props) {
 export default function Generator() {
   const [showModal, setShowModal] = useState(false);
   const [workout, setWorkout] = useState(null)
-  const [poison, setPoison] = useState('individual')
+  const [poison, setPoison] = useState(null)
   const [muscles, setMuscles] = useState([])
-  const [goal, setGoal] = useState('strength_power')
+  const [goal, setGoal] = useState(null)
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -59,21 +59,20 @@ export default function Generator() {
       </div>
 
       <Header index={'03'} title={'Define Your Mission'} description={"Select your ultimate objective."} />
-
+      
       <div className='flex justify-center'>
-  <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg'>
-    {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
-      return (
-        <button onClick={() => setGoal(scheme)}
-        className={'bg-slate-950 border border-slate-950 duration-200 px-6 py-3 rounded-lg min-w-[150px] '+ (scheme === goal ? 'bg-orange-500 border-orange-500 text-white' : 'hover:border-orange-500 hover:bg-orange-500 hover:text-white')
-        } key={schemeIndex}>
-          <p className='capitalize'>{scheme.replaceAll('_', " ")}</p>
-        </button>
-      )
-    })}
-  </div>
+      <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg'>
+  {Object.keys(SCHEMES).map((scheme, schemeIndex) => (
+    <button
+      key={schemeIndex}
+      onClick={() => setGoal(scheme)} 
+      className={`border duration-200 px-4 py-3 rounded-lg ${goal === scheme ? ' bg-orange-500 border-orange-500 text-white' : ' bg-slate-950 border-slate-950 text-white hover:border-orange-500 hover:bg-orange-500'}`}
+    >
+      <p className='capitalize'>{scheme.replace(/_/g, ' ')}</p> {/* Use replace with regex for older browser compatibility */}
+    </button>
+  ))}
 </div>
-
+</div>
 
     </SectionWrapper>
   )
