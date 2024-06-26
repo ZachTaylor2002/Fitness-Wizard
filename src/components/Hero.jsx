@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 
 //First React Component created called Hero
 //This component has the same name as the file (as well as the function) 
@@ -15,9 +16,7 @@ export default function Hero() {
         <p className='text-sm md:text-base font-light'>
           Embark on a journey to become <span className='text-green-400 font-medium'>unbelievably fit</span> and transform into the local <span className='text-green-400 font-medium'>fitness legend</span>. Embrace the magic of every workout and unlock your full potential.
         </p>
-        <button className='px-8 mx-auto py-4 rounded-md border-2 border-orange-400 bg-slate-950 text-white shadow-blue duration-200'>
-        <p>Accept & Begin</p>
-        </button>
+        <Button text={"Accept & Begin"}/>
       </div>
     )
 }
