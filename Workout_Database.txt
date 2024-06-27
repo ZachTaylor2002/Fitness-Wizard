@@ -1,0 +1,14 @@
+Fitness Wizard will have four different categrories of workouts that the user can select from and each exericse will have different tempos (reps on how many to do during set).
+
+Individual, Bro Split, Upper Lower, 
+
+Individual selection will target muscle groups of biceps, triceps, chest, back, shoulders, quads, hamstring, glutes, calves, and abs
+
+Bro Split selection will be broken apart into three sub sections
+1.) Push workout consisting of working out the triceps, chest, and shoulders
+2.) Pull workout consisting of working out the back, shoulders, and biceps
+3.) Legs workout consisting of working out the glutes, calves, hamstrings, and quads
+
+Upper Lower selection will be broken into two selections:
+1.) Upper workout consisting of the triceps, biceps, shoulders, chest, and back
+2.) Lower workout consisting of the quads, calves, hamstrings, and the glutes 
