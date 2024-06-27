@@ -36,5 +36,5 @@ export const WORKOUT = {
       }
 }
 
-
-
+Web-link for the freeworkouts:
+https://www.muscleandstrength.com/workout-routines
