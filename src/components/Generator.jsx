@@ -17,11 +17,10 @@ function Header(props) {
   );
 }
 
-export default function Generator() {
+export default function Generator(props) {
   const [showModal, setShowModal] = useState(false);
-  const [poison, setPoison] = useState(null)
-  const [muscles, setMuscles] = useState([])
-  const [goal, setGoal] = useState(null)
+  const { muscles, setMuscles, poison, setPoison, goal, setGoal, updateWorkout} = props
+  
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -108,7 +107,7 @@ export default function Generator() {
 </div>
 </div>
 
-      <Button className='sdzsd' text={"Formulate"}/>
+      <Button func={updateWorkout} text={"Formulate"}/>
 
     </SectionWrapper>
 
