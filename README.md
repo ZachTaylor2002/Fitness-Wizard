@@ -22,6 +22,6 @@ This project is a React-based application made with HTML, TailwindCSS, JavaScrip
 ![image](https://github.com/ZachTaylor2002/Fitness-Wizard/assets/124469454/7bdfbc60-3fcc-42b1-b928-739acbac62ee)
 
 ## Key Features
-• Users begin by selecting from four initial options to tailor their workout experience.
-• Choose specific muscle groups they wish to focus on, ensuring a targeted workout.
+• Users begin by selecting from four initial options to tailor their workout experience.<br>
+• Choose specific muscle groups they wish to focus on, ensuring a targeted workout.<br>
 • The application allows users to pick their fitness goal, whether it be Strength, Power Growth, Hypertrophy, or Cardiovascular Endurance.
