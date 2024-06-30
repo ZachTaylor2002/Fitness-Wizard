@@ -5,7 +5,7 @@
 
 ## Overview
 
-This project is a React-based application made with HTML, TailwindCSS, JavaScript, React.js, and Git. 
+This project is a React-based application made with HTML, TailwindCSS, JavaScript, React.js, and Git. Fitness Wizard allows users to customize their workout plans by selecting from four options tailored to their preferences. Users can choose the muscle group they want to target, select their fitness goal (strength, power, growth, hypertrophy, or cardiovascular endurance), and then pick their specific workout routines. The application ensures a user-friendly experience and helps users achieve their fitness objectives effectively.
 <br>
 <br>
 ** ** 
