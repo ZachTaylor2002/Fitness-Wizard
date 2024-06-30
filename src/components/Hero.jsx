@@ -8,7 +8,11 @@ export default function Hero() {
     return (
         <div className='min-h-screen flex flex-col gap-10 items-center justify-center text-center max-w-[800px] w-full mx-auto p-4'>
         <div className='flex flex-col gap-4'>
-          <p className='text-lg sm:text-xl font-medium'>UNLEASH YOUR INNER</p>
+          <p className='text-lg sm:text-xl font-medium'>
+          <span className='text-red-500'>DECIDE</span>. 
+          <span className='text-yellow-500'> COMMIT</span>. 
+          <span className='text-green-500'> SUCCEED</span>.
+          </p>
           <h1 className='uppercase font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>
             Fitness<span className='text-green-400'>Wizard</span>
           </h1>
