@@ -18,7 +18,7 @@ This project is a React-based application made with HTML, TailwindCSS, JavaScrip
 <br>
 <br>
 <br>
-** ** 
+**Exercise cards customized and featuring a button to track repetitions.** 
 ![image](https://github.com/ZachTaylor2002/Fitness-Wizard/assets/124469454/7bdfbc60-3fcc-42b1-b928-739acbac62ee)
 
 ## Key Features
