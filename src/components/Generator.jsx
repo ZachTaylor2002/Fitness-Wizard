@@ -49,68 +49,90 @@ export default function Generator(props) {
 
 }
 
-  return (
-    <SectionWrapper id={'generate'} header={"generate your workout"} title={['It\'s', 'Fitness', 'o\'clock']}>
-      <Header index={'01'} title={'Pick your challenge'} description={"Choose your next fitness adventure."} />
-      
-      <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
-      {Object.keys(WORKOUTS).map((type, typeIndex) => {
-        return (
-          <button onClick={() => {
-            setMuscles([])
-            setPoison(type)
-          }} className={
+return (
+  <SectionWrapper id={'generate'} header={'generate your workout'} title={['It\'s', 'Fitness', 'o\'clock']}>
+    <Header index={'01'} title={'Pick your challenge'} description={'Choose your next fitness adventure.'} />
+
+    <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
+      {Object.keys(WORKOUTS).map((type, typeIndex) => (
+        <button
+          key={typeIndex}
+          onClick={() => {
+            setMuscles([]);
+            setPoison(type);
+          }}
+          className={
             'border duration-200 px-4 py-3 rounded-lg' +
-            (type === poison ? ' bg-orange-500 border-orange-500 text-white' : ' bg-slate-950 border-slate-950 text-white hover:border-orange-500 hover:bg-orange-500')
-          } key={typeIndex}>
-             <p className='capitalize'>{type.replaceAll('_', " ")}</p>
+            (type === poison
+              ? ' bg-orange-500 border-orange-500 text-white'
+              : ' bg-slate-950 border-slate-950 text-white hover:border-orange-500 hover:bg-orange-500')
+          }
+        >
+          <p className='capitalize'>{type.replaceAll('_', ' ')}</p>
+        </button>
+      ))}
+    </div>
+
+    {poison && (
+      <>
+        <Header index={'02'} title={'Lock on targets'} description={'Target your muscle groups'} />
+        <div className='bg-slate-950 p-3 border border-solid border-blue-400 rounded-lg'>
+          <button onClick={toggleModal} className='relative flex items-center justify-between w-full p-3'>
+            <p className='capitalize text-center w-full'>{muscles.length === 0 ? 'Select muscle groups' : muscles.join(' ')}</p>
+            <i className='fa-solid fas fa-caret-down text-white'></i>
           </button>
-        )
-      })}
-      </div>
-
-      
-      <Header index={'02'} title={'Lock on targets'} description={"Target your muscle groups"} />
-      <div className='bg-slate-950 p-3 border border-solid border-blue-400 rounded-lg'>
-      <button onClick={toggleModal} className='relative flex items-center justify-between w-full p-3'>
-            <p className='capitalize text-center w-full'>{muscles.length == 0 ? 'Select muscle groups' : muscles.join(' ')}</p>
-          <i className="fa-solid fas fa-caret-down text-white"></i>
-      </button>
-        {showModal && (
+          {showModal && (
             <div className='flex flex-col px-3 pb-3'>
-            {(poison === 'individual' ? WORKOUTS[poison] : Object.keys(WORKOUTS[poison])).map((muscleGroup, muscleGroupIndex) => {
-                return (
-                    <button onClick={() => {
-                        updateMuscles(muscleGroup)
-                    }} key={muscleGroupIndex} className={'hover:text-orange-400 duration-200 ' + (muscles.includes(muscleGroup) ? ' text-orange-400' : ' ')}>
-                        <p className='uppercase'>{muscleGroup.replaceAll('_', ' ')}</p>
-                    </button>
-                )
-            })}
+              {poison === 'individual' ? (
+                WORKOUTS[poison].map((muscleGroup, muscleGroupIndex) => (
+                  <button
+                    key={muscleGroupIndex}
+                    onClick={() => {
+                      updateMuscles(muscleGroup);
+                    }}
+                    className={'hover:text-orange-400 duration-200 ' + (muscles.includes(muscleGroup) ? ' text-orange-400' : ' ')}
+                  >
+                    <p className='uppercase'>{muscleGroup.replaceAll('_', ' ')}</p>
+                  </button>
+                ))
+              ) : (
+                Object.keys(WORKOUTS[poison]).map((muscleGroup, muscleGroupIndex) => (
+                  <button
+                    key={muscleGroupIndex}
+                    onClick={() => {
+                      updateMuscles(muscleGroup);
+                    }}
+                    className={'hover:text-orange-400 duration-200 ' + (muscles.includes(muscleGroup) ? ' text-orange-400' : ' ')}
+                  >
+                    <p className='uppercase'>{muscleGroup.replaceAll('_', ' ')}</p>
+                  </button>
+                ))
+              )}
+            </div>
+          )}
         </div>
-        )}
-      </div>
+      </>
+    )}
 
-      <Header index={'03'} title={'Define Your Mission'} description={"Select your ultimate objective."} />
-      
-      <div className='flex justify-center'>
+    <Header index={'03'} title={'Define Your Mission'} description={'Select your ultimate objective.'} />
+
+    <div className='flex justify-center'>
       <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg'>
-  {Object.keys(SCHEMES).map((scheme, schemeIndex) => (
-    <button
-      key={schemeIndex}
-      onClick={() => setGoal(scheme)} 
-      className={`border duration-200 px-4 py-3 rounded-lg ${goal === scheme ? ' bg-orange-500 border-orange-500 text-white' : ' bg-slate-950 border-slate-950 text-white hover:border-orange-500 hover:bg-orange-500'}`}
-    >
-      <p className='capitalize'>{scheme.replace(/_/g, ' ')}</p> {/* Use replace with regex for older browser compatibility */}
-    </button>
-  ))}
-</div>
-</div>
+        {Object.keys(SCHEMES).map((scheme, schemeIndex) => (
+          <button
+            key={schemeIndex}
+            onClick={() => setGoal(scheme)}
+            className={`border duration-200 px-4 py-3 rounded-lg ${
+              goal === scheme ? ' bg-orange-500 border-orange-500 text-white' : ' bg-slate-950 border-slate-950 text-white hover:border-orange-500 hover:bg-orange-500'
+            }`}
+          >
+            <p className='capitalize'>{scheme.replace(/_/g, ' ')}</p>
+          </button>
+        ))}
+      </div>
+    </div>
 
-      <Button func={updateWorkout} text={"Formulate"}/>
-
-    </SectionWrapper>
-
-      
-  )
+    <Button func={updateWorkout} text={'Formulate'} />
+  </SectionWrapper>
+);
 }
