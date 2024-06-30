@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     font-family: "Poppins", sans-serif;
 }
@@ -17,3 +21,4 @@ span{
     transform: translate(-3px, -3px);
     box-shadow: 6px 6px 0 0 #f97316;
 }
+

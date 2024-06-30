@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function SectionWrapper(props) {
     // Destructure props to extract children, header, and title
-    const { children, header, title } = props;
+    const { children, header, title, id } = props;
 
     return (
-        <section className='min-h-screen flex flex-col bg-gradient-to-r from-blue-700 to-green-600 text-white'>
+        <section id={id} className='min-h-screen flex flex-col bg-gradient-to-r from-blue-700 to-green-600 text-white'>
             <div className='bg-blue-900 py-10 flex flex-col items-center justify-center p-4 gap-2'>
                 <p className='uppercase font-medium'>{header}</p>
                 <h2 className='font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>
