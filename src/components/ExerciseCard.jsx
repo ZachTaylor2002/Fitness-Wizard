@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { FaDumbbell } from 'react-icons/fa';  // Importing an icon
 
-export default function ExerciseCard(props) {
-  const { exercise, i } = props;
-  const [setsCompleted, setSetsComplete] = useState(0);
+// ExerciseCard Component
 
+export default function ExerciseCard(props) {
+  const { exercise, i } = props; // Destructure props to get exercise and index
+  const [setsCompleted, setSetsComplete] = useState(0);   // State to track completed sets
+
+   // Function to handle increment of sets completed
   function handleSetIncrement() {
+     // Function to handle increment of sets completed
     setSetsComplete((setsCompleted + 1) % 6);
   }
 
